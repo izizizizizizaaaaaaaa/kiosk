@@ -1,0 +1,172 @@
+body {
+    margin:0px;
+    height:100%;
+    width:100%;
+    background-image:url("images/background.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    padding-left : 20px;
+    background-color : white;
+    position : fixed;
+    width:100%;
+    border-bottom: 3px solid lightslategray;
+    z-index: 1;
+}
+
+.task-tabs {
+    display:flex;
+    position:relative;
+}
+
+.task-tabs div {
+    margin-right:10px;
+}
+
+.in-menu {
+    margin:auto;
+    width : 100vw;
+    display:flex;
+    justify-content: space-around;
+    padding:20px;
+}
+
+.menu-block {
+    width: 40vw;
+    height: 60vw;
+    background-color: white;
+    margin-bottom:20px;
+    text-align: center;
+    position:relative;
+}
+
+.menu-block img {
+    width: 100%;
+    height: 60%;
+    margin-top:10px;
+} 
+
+.menu-name {
+    font-size : 120%;
+    margin-top:5px;
+    margin-bottom:0px;
+}
+
+.menu-button {
+    width : 95%;
+    height: 95%;
+    padding:0;
+    background-color: transparent;
+    border:transparent;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+
+.blink {
+    height:200px;
+    margin:0px;
+}
+
+.order-bar {
+    background-color: white;
+    height:200px;
+    width:100%;
+    position:fixed;
+    bottom:0px;
+    z-index: 1;
+
+}
+
+.order-top {
+    width:100%;
+    position:fixed;
+    border-top : 5px solid lightcoral;
+    justify-content: space-between;
+    padding:20px;
+    padding-bottom:50px;
+}
+
+.order-logo {
+    display: flex;
+    justify-content: space-between;
+    padding:5px;
+}
+
+.logo {
+    margin:0px;
+}
+
+.order-button {
+    height:80%;
+    margin-right:20px;
+}
+
+.carousel {
+    position:relative;
+    top:50px;
+}
+
+.modal-top {
+    display:flex;
+    height:35vh;
+}
+
+.modal-top img {
+    width: 100%;
+    height: 65%;
+    margin-top:10px;
+}
+
+.modal-left {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    height:100%;
+    width:50%;
+    text-align: center;
+}
+
+.modal-right {
+    display:flex;
+    flex-direction:column;
+    width:50%;
+    justify-content: center;
+    padding-left:20px;
+}
+
+.modal-menu_name {
+    margin-top:25px;
+    font-size : 20px;
+}
+
+.modal-bottom {
+    display:flex;
+    justify-content: center;
+}
+
+.modal-bottom button {
+    margin: 0px 10px;
+}
+
+.temp-num {
+    font-size : 100px;
+}
+
+.form-check {
+    margin-bottom:20px;
+    font-size:20px;
+}
+
+.basket-task {
+    display:flex;
+    justify-content: space-between;
+}
+
+.basket-list {
+    display:block;
+    position:fixed;
+    bottom:110px;
+}

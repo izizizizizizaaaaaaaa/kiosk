@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link href="style2.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!-- 내비게이션 탭 -->
+    <div class="navbar">
+      <div class="task-tabs">
+        <div id="under-line"></div>
+        <button id="button-all">전체</button>
+        <button id="button-drink">음료</button>
+        <button id="button-food">음식</button>
+      </div>
+    </div>
+
+    <!-- 메뉴 모음 -->
+    <div
+      id="menu"
+      class="carousel slide"
+      style="height: 650px; overflow-x: hidden; overflow-y: scroll"
+    >
+      <div class="in-menu row" id="menu-space">
+        <div class="menu-block col-6" id="americano">
+          <img src="images/coffee.jpg" />
+          <p class="menu-name">아메리카노</p>
+          <p class="menu-name">3,000원</p>
+          <button
+            type="button"
+            class="menu-button"
+            data-bs-toggle="modal"
+            data-bs-target="#americano-button"
+          ></button>
+        </div>
+        <div class="menu-block col-6" id="latte">
+          <img src="images/latte.jpg" />
+          <p class="menu-name">라떼</p>
+          <p class="menu-name">3,800원</p>
+          <button
+            type="button"
+            class="menu-button"
+            data-bs-toggle="modal"
+            data-bs-target="#latte-button"
+          ></button>
+        </div>
+        <div class="menu-block col-6" id="juice">
+          <img src="images/juice.jpg" />
+          <p class="menu-name">주스</p>
+          <p class="menu-name">3,600원</p>
+          <button
+            type="button"
+            class="menu-button"
+            data-bs-toggle="modal"
+            data-bs-target="#juice-button"
+          ></button>
+        </div>
+        <div class="menu-block col-6" id="tea">
+          <img src="images/tea.jpg" />
+          <p class="menu-name">녹차</p>
+          <p class="menu-name">4,500원</p>
+          <button
+            type="button"
+            class="menu-button"
+            data-bs-toggle="modal"
+            data-bs-target="#tea-button"
+          ></button>
+        </div>
+        <div class="menu-block col-6" id="cookie">
+          <img src="images/cookie.jpg" />
+          <p class="menu-name">쿠키</p>
+          <p class="menu-name">5,400원</p>
+          <button
+            type="button"
+            class="menu-button"
+            data-bs-toggle="modal"
+            data-bs-target="#cookie-button"
+          ></button>
+        </div>
+        <div class="menu-block col-6" id="toast">
+          <img src="images/toast.jpg" />
+          <p class="menu-name">토스트</p>
+          <p class="menu-name">4,400원</p>
+          <button
+            type="button"
+            class="menu-button"
+            data-bs-toggle="modal"
+            data-bs-target="#toast-button"
+          ></button>
+        </div>
+        <div class="blink"></div>
+      </div>
+    </div>
+
+    <!-- 모달 모음 -->
+    <div>
+      <!-- 아메리카노 모달 -->
+      <div
+        class="modal fade"
+        id="americano-button"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">옵션 선택</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- top -->
+              <div class="modal-top">
+                <div class="modal-left">
+                  <img src="images/coffee.jpg" />
+                  <p class="modal-menu_name">아메리카노</p>
+                </div>
+                <div class="modal-right">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="0-option"
+                      id="flexRadioDefault1"
+                      value="ice"
+                      checked="checked"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      차갑게
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="0-option"
+                      id="flexRadioDefault2"
+                      value="hot"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      뜨겁게
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- bottom -->
+              <div class="modal-bottom">
+                <button onclick="minus(0)">-</button>
+                <p id="temp-num0">1</p>
+                <button onclick="plus(0)">+</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onclick="resetTempNum(0)"
+              >
+                취소
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                onclick="select(0)"
+              >
+                선택하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 라떼 모달 -->
+      <div
+        class="modal fade"
+        id="latte-button"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">옵션 선택</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- top -->
+              <div class="modal-top">
+                <div class="modal-left">
+                  <img src="images/latte.jpg" />
+                  <p class="modal-menu_name">라떼</p>
+                </div>
+                <div class="modal-right">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="1-option"
+                      id="flexRadioDefault1"
+                      value="ice"
+                      checked="checked"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      차갑게
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="1-option"
+                      id="flexRadioDefault2"
+                      value="hot"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      뜨겁게
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- bottom -->
+              <div class="modal-bottom">
+                <button onclick="minus(1)">-</button>
+                <p id="temp-num1">1</p>
+                <button onclick="plus(1)">+</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onclick="resetTempNum(1)"
+              >
+                취소
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                onclick="select(1)"
+              >
+                선택하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 주스 모달 -->
+      <div
+        class="modal fade"
+        id="juice-button"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">옵션 선택</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- top -->
+              <div class="modal-top">
+                <div class="modal-left">
+                  <img src="images/juice.jpg" />
+                  <p class="modal-menu_name">주스</p>
+                </div>
+                <div class="modal-right">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="2-option"
+                      id="flexRadioDefault1"
+                      value="ice"
+                      checked="checked"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      차갑게
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- bottom -->
+              <div class="modal-bottom">
+                <button onclick="minus(2)">-</button>
+                <p id="temp-num2">1</p>
+                <button onclick="plus(2)">+</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onclick="resetTempNum(2)"
+              >
+                취소
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                onclick="select(2)"
+              >
+                선택하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 녹차 -->
+      <div
+        class="modal fade"
+        id="tea-button"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">옵션 선택</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- top -->
+              <div class="modal-top">
+                <div class="modal-left">
+                  <img src="images/tea.jpg" />
+                  <p class="modal-menu_name">녹차</p>
+                </div>
+                <div class="modal-right">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="3-option"
+                      id="flexRadioDefault1"
+                      value="ice"
+                      checked="checked"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      차갑게
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="3-option"
+                      id="flexRadioDefault2"
+                      value="hot"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      뜨겁게
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- bottom -->
+              <div class="modal-bottom">
+                <button onclick="minus(3)">-</button>
+                <p id="temp-num3">1</p>
+                <button onclick="plus(3)">+</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onclick="resetTempNum(3)"
+              >
+                취소
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                onclick="select(3)"
+              >
+                선택하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 쿠키 -->
+      <div
+        class="modal fade"
+        id="cookie-button"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">옵션 선택</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- top -->
+              <div class="modal-top">
+                <div class="modal-left">
+                  <img src="images/cookie.jpg" />
+                  <p class="modal-menu_name">쿠키</p>
+                </div>
+                <div class="modal-right">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="4-option"
+                      id="flexRadioDefault1"
+                      value="chocolate"
+                      checked="checked"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      초콜릿
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="4-option"
+                      id="flexRadioDefault2"
+                      value="white"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      화이트
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- bottom -->
+              <div class="modal-bottom">
+                <button onclick="minus(4)">-</button>
+                <p id="temp-num4">1</p>
+                <button onclick="plus(4)">+</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onclick="resetTempNum(4)"
+              >
+                취소
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                onclick="select(4)"
+              >
+                선택하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 토스트 -->
+      <div
+        class="modal fade"
+        id="toast-button"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">옵션 선택</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- top -->
+              <div class="modal-top">
+                <div class="modal-left">
+                  <img src="images/toast.jpg" />
+                  <p class="modal-menu_name">토스트</p>
+                </div>
+                <div class="modal-right">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="5-option"
+                      id="flexRadioDefault1"
+                      value="egg"
+                      checked="checked"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      계란
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="5-option"
+                      id="flexRadioDefault2"
+                      value="salad"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      샐러드
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- bottom -->
+              <div class="modal-bottom">
+                <button onclick="minus(5)">-</button>
+                <p id="temp-num5">1</p>
+                <button onclick="plus(5)">+</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onclick="resetTempNum(5)"
+              >
+                취소
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                onclick="select(5)"
+              >
+                선택하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 하단 메뉴판 -->
+    <div class="order-bar">
+      <div class="order-logo">
+        <h5 class="logo">장바구니</h5>
+        <button class="order-button" id="order-go">주문하기</button>
+      </div>
+      <div
+        class="order-top"
+        id="in-basket"
+        style="height: 200px; overflow-x: hidden; overflow-y: scroll"
+      ></div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script2.js"></script>
+  </body>
+</html>

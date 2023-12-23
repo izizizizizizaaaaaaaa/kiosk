@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line Chart Example</title>
+    <!-- Chart.js CDN 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="styleM.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!-- 차트를 표시할 캔버스 요소 -->
+    <button onclick="moveTable()">To Table</button>
+    <div>
+      <canvas id="myLineChart" width="400"></canvas>
+    </div>
+    <div class="buttonset">
+      <div>
+        <h4>최대 표시 기간</h4>
+        <button onclick="setHours(24)">1 day</button>
+        <button onclick="setHours(168)">7 days</button>
+        <button onclick="setHours(720)">30 days</button>
+      </div>
+      <div>
+        <h4>묶음 시간 단위</h4>
+        <button onclick="setInterval(1)">1시간</button>
+        <button onclick="setInterval(6)">6시간</button>
+        <button onclick="setInterval(12)">12시간</button>
+        <button onclick="setInterval(24)">1일</button>
+      </div>
+    </div>
+
+    <!-- Chart.js 초기화 및 데이터 전달하는 스크립트 -->
+
+    <script src="scriptM2.js"></script>
+  </body>
+</html>

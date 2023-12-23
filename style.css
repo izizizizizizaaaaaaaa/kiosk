@@ -1,0 +1,173 @@
+body {
+    margin:0px;
+    height:100%;
+    width:100%;
+    background-image:url("images/background.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.logo-box {
+    width:100vw;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    
+
+}
+
+.logo1 {
+    font-size: 4em;
+    -webkit-user-select:none; /* 아래 4줄 드래그 불가 옵션 */
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+.logo2 {
+    font-size: 1.5em;
+    -webkit-user-select:none; /* 아래 4줄 드래그 불가 옵션 */
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none  
+}
+
+.mid {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.card-box {
+    width:400px;
+    height:300px;
+}
+
+.carousel-item img {
+    width: 400px;
+    height: 250px;
+    
+  }
+
+.carousel-control-next {
+    height:250px;
+}
+
+.carousel-control-prev {
+    height:250px;
+}
+
+
+.write-box {
+    width : 600px;
+}
+
+.btn {
+    --bs-btn-border-radius:10%;
+}
+
+.btn-outline-primary {
+    background-color:#0d6efd;
+    color:white;
+}
+
+.btn-outline-primary:hover {
+    background-color:#083d8b;
+    color:white;
+}
+
+.btn-outline-success {
+    background-color: #198754;
+    color:white;
+}
+
+.btn-outline-success:hover {
+    background-color: #125d3a;
+    color:white;
+}
+
+.form-control-lg {
+    font-size:1rem;
+    text-align: center;
+}
+
+.text-mini {
+    font-size:1rem;
+    text-align:center;
+    margin-top: 2vw;
+}
+
+.navbar {
+    padding-left : 20px;
+    background-color : white;
+    position : fixed;
+    width:100%;
+    border-bottom: 3px solid lightslategray;
+    z-index: 1;
+}
+
+.nav-link {
+    color : black;
+}
+
+.in-menu {
+    margin:auto;
+    height: 1000px;
+    width : 100vw;
+    display:flex;
+    justify-content: space-around;
+    padding:20px 20px;
+}
+
+.menu-block {
+    width: 40vw;
+    height: 60vw;
+    border:1px solid blue;
+    background-color: white;
+    margin-bottom:20px;
+}
+
+.menu-button {
+    padding:48px 3rem;
+    border:1px solid red;
+    display:block;
+    background-color: transparent;
+}
+
+.blink {
+    height:220px;
+}
+
+.order-bar {
+    background-color: white;
+    border-top : 3px solid lightslategray;
+    height:200px;
+    width:100%;
+    position:fixed;
+    bottom:0px;
+    z-index: 1;
+
+}
+
+.order-logo {
+    padding : 10px;
+}
+
+.carousel {
+    position:relative;
+    top:50px;
+}
+
+.dataTables_paginate {
+    position:relative;
+    text-align: center;
+}
+
+.paginate_button {
+    margin : 0px 10px;
+}
+
+.margin-1 {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
