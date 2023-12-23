@@ -19,7 +19,7 @@ app.post('/your-server-endpoint', (req, res) => {
     const data3 = req.body.data3;
     const data4 = req.body.data4;
     const data5 = req.body.data5;
-
+    console.log('test');
     console.log('받은 날짜 데이터:', data1);
     console.log('받은 시간 데이터:', data2);
     console.log('받은 장소 데이터:', data3);
