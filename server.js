@@ -34,11 +34,7 @@ app.post('/your-server-endpoint', (req, res) => {
     // const uri = 'mongodb://localhost:27017'; 로컬
     // const uri = "mongodb://127.0.0.1:27017"; 로컬
     const uri = MONGODB_URI_PROD;       // 배포
-    const client = new MongoClient(uri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        ssl: true
-    });
+    const client = new MongoClient(uri);
 
     // 데이터 삽입 및 서버로 전체 데이터 다시 불러오기
     async function run() {
